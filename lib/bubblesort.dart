@@ -1,6 +1,12 @@
-void main(List<String> args) {}
+void main(List<String> args) {
+  final list = [9, 4, 10, 3];
+  print('Original list $list');
+  bubbleSort(list);
+  print(list);
+}
 
 extension SwappableList<E> on List<E> {
+  // for swapping values between two indices
   void swap(int indexA, int indexB) {
     final temp = this[indexA];
     this[indexA] = this[indexB];
@@ -9,6 +15,7 @@ extension SwappableList<E> on List<E> {
 }
 
 void bubbleSort<E extends Comparable<dynamic>>(List<E> list) {
+  // counts the passes, it compares each less value with itself, shortens the list by one
   for (var end = list.length - 1; end > 0; end--) {
     var swapped = false;
 
